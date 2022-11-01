@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Retro New Version", sans-serif;
+}
+
+body {
+  font-family: Book Antiqua, Palatino, Palatino Linotype, Palatino LT STD,
+    Georgia, serif;
+  background-image: linear-gradient(
+    to right top,
+    #6f412a,
+    #80472b,
+    #914d2b,
+    #a3522c,
+    #b5582c
+  );
+}
+
+/* Everything is inside this */
+div.mainContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 867px;
+  width: 100%;
+}
+
+/* h1 that contains title */
+h1.titleText {
+  margin-top: 20px;
+}
+
+/* Button for adding a new book */
+button.addBook {
+  border: none;
+  background: none;
+}
+
+button.addBook:hover {
+  transform: scale(1.1);
+}
+
+button.addBook:active {
+  transform: scale(0.95);
+}
+
+/* Holds all books created */
+div.bookShelf {
+  width: 95%;
+  height: auto;
+  background-color: red;
+  margin: 50px;
+}

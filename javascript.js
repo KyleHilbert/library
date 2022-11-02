@@ -6,7 +6,8 @@
       - Title
       - Number of pages
       - If you have read it 
-
+    When user hits submit it adds the object to to a div that holds
+    all objects
 
 All of your book objects are going to be stored in a simple array, 
 so add a function to the script (not the constructor) that can take 

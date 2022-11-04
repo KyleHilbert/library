@@ -115,7 +115,6 @@ function addBookToLibrary() {
   getRead.checked = false;
 }
 
-// Make form reset inputs
 // Add scroll bar for bookShelf
 // Add removal of books
-// Add read book button and form option checkbox
+// Add read book button

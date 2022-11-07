@@ -18,30 +18,27 @@ You can display them in some sort of table, or each on their own “card”. It 
 help for now to manually add a few books to your array so you can see the display.
 */
 
+// Where input is put
 const getTitle = document.querySelector("#title");
 const getAuthor = document.querySelector("#author");
 const getPages = document.querySelector("#pages");
 const getRead = document.querySelector("#read");
-
+// Where the books are displayed
 const bookShelf = document.querySelector(".bookShelf");
 
-console.log(getTitle);
-console.log(getAuthor);
-console.log(getPages);
-
+// Creating array to hold books
 let myLibrary = [];
 
+// Constructor book function
 function Book(title, author, pages, read) {
-  // the constructor...
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
 }
 
+// Function to add book to the page
 function addBookToLibrary() {
-  // do stuff here
-
   // Creates a book object and adds it to array
   const newBook = new Book(
     getTitle.value,
@@ -64,7 +61,7 @@ function addBookToLibrary() {
     bookDiv.className = "bookDiv";
     bookDiv.style.width = "10rem";
     bookDiv.style.height = "10rem";
-    bookDiv.style.backgroundColor = "beige";
+    bookDiv.style.backgroundColor = "#6998ab";
     bookDiv.style.margin = "1rem";
     bookDiv.style.borderRadius = "10px";
     bookDiv.style.display = "flex";
@@ -92,10 +89,13 @@ function addBookToLibrary() {
     pages.textContent = myLibrary[i].pages + " pages";
     pages.style.margin = ".5rem";
 
+    // Adds all things to bookDiv
     bookDiv.append(title);
     bookDiv.append(by);
     bookDiv.append(author);
     bookDiv.append(pages);
+
+    // Checking if input is checked or not
     if (myLibrary[i].read === "on") {
       const read = document.createElement("h4");
       read.textContent = "Read";

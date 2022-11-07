@@ -7,14 +7,7 @@
 body {
   font-family: Book Antiqua, Palatino, Palatino Linotype, Palatino LT STD,
     Georgia, serif;
-  background-image: linear-gradient(
-    to right top,
-    #6f412a,
-    #80472b,
-    #914d2b,
-    #a3522c,
-    #b5582c
-  );
+  background-color: #1a374d;
 }
 
 /* Everything is inside this */
@@ -35,7 +28,7 @@ div.bookDetails {
   padding: 1rem;
   height: 20rem;
   width: 20rem;
-  background-color: beige;
+  background-color: #6998ab;
   border-radius: 10px;
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
@@ -56,11 +49,14 @@ div.formBox {
 /* FormBox label style */
 div.formBox > label {
   font-size: 1rem;
+  font-weight: bold;
 }
 
 /* FormBox input style */
 div.formBox > input {
   height: 1rem;
+  border: 1px solid black;
+  background-color: #6998ab;
 }
 
 /* FormBox input style for pages only*/
@@ -93,8 +89,16 @@ div.bookShelf {
   flex-wrap: wrap;
   height: 48rem;
   width: 48rem;
-  background-color: rgb(131, 173, 173);
+  background-color: #adcbd7;
   margin-left: 10rem;
   border-radius: 10px;
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
+
+/*
+#1a374d
+#406882
+#6998ab
+#adcbd7
+#924bed
+*/

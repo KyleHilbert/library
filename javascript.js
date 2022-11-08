@@ -56,9 +56,9 @@ function addBookToLibrary() {
   getRead.checked = false;
 }
 
-// Function to removeBookToLibrary
-function removeBookToLibrary() {
-  myLibrary.splice(0, 1);
+// Function to remove a book from the library
+function removeBookToLibrary(button) {
+  myLibrary.splice(button, 1);
   displayBooks();
 }
 
@@ -114,7 +114,10 @@ function displayBooks() {
     const delButton = document.createElement("button");
     delButton.style.height = "2rem";
     delButton.style.width = "2rem";
-    delButton.onclick = removeBookToLibrary;
+    delButton.onclick = function () {
+      removeBookToLibrary(delButton.id);
+    };
+    delButton.id = i;
     buttonDiv.append(delButton);
 
     // Creates button for changing if read or not
@@ -151,7 +154,8 @@ function displayBooks() {
   }
 }
 
-// Add scroll bar for bookShelf
 // Add removal of books
 // Add read book button
 // give each book div a id of the index
+// get id of button clicked
+// Event listner to get iD?

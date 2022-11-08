@@ -23,8 +23,15 @@ const getTitle = document.querySelector("#title");
 const getAuthor = document.querySelector("#author");
 const getPages = document.querySelector("#pages");
 const getRead = document.querySelector("#read");
+
 // Where the books are displayed
 const bookShelf = document.querySelector(".bookShelf");
+
+// Making so form works
+const form = document.querySelector("#form");
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+});
 
 // Creating array to hold books
 let myLibrary = [];
@@ -153,9 +160,3 @@ function displayBooks() {
     bookShelf.append(bookDiv);
   }
 }
-
-// Add removal of books
-// Add read book button
-// give each book div a id of the index
-// get id of button clicked
-// Event listner to get iD?

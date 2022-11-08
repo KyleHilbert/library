@@ -44,10 +44,26 @@ function addBookToLibrary() {
     getTitle.value,
     getAuthor.value,
     getPages.value,
-    getRead.value
+    getRead.checked
   );
   myLibrary.push(newBook);
+  displayBooks();
 
+  // Clears inputs
+  getTitle.value = "";
+  getAuthor.value = "";
+  getPages.value = "";
+  getRead.checked = false;
+}
+
+// Function to removeBookToLibrary
+function removeBookToLibrary() {
+  myLibrary.splice(0, 1);
+  displayBooks();
+}
+
+// Functions to display all books in library
+function displayBooks() {
   // Gets length of myLibrary array
   let length = myLibrary.length;
 
@@ -59,8 +75,8 @@ function addBookToLibrary() {
     // Creates and styles element that holds book info
     const bookDiv = document.createElement("div");
     bookDiv.className = "bookDiv";
-    bookDiv.style.width = "10rem";
-    bookDiv.style.height = "10rem";
+    bookDiv.style.width = "12rem";
+    bookDiv.style.height = "12rem";
     bookDiv.style.backgroundColor = "#6998ab";
     bookDiv.style.margin = "1rem";
     bookDiv.style.borderRadius = "10px";
@@ -69,6 +85,7 @@ function addBookToLibrary() {
     bookDiv.style.flexDirection = "column";
     bookDiv.style.fontSize = ".8rem";
     bookDiv.style.boxShadow = "0px 5px 10px 0px rgba(0, 0, 0, 0.5)";
+    bookDiv.id = i;
 
     // Creates h2 for book title
     const title = document.createElement("h2");
@@ -89,6 +106,24 @@ function addBookToLibrary() {
     pages.textContent = myLibrary[i].pages + " pages";
     pages.style.margin = ".5rem";
 
+    //Creates div that holds buttons
+    const buttonDiv = document.createElement("div");
+    buttonDiv.className = "buttonDiv";
+
+    // Creates button for deleting from list
+    const delButton = document.createElement("button");
+    delButton.style.height = "2rem";
+    delButton.style.width = "2rem";
+    delButton.onclick = removeBookToLibrary;
+    buttonDiv.append(delButton);
+
+    // Creates button for changing if read or not
+    const readButton = document.createElement("button");
+    readButton.style.height = "2rem";
+    readButton.style.width = "2rem";
+    readButton.style.marginLeft = ".5rem";
+    buttonDiv.append(readButton);
+
     // Adds all things to bookDiv
     bookDiv.append(title);
     bookDiv.append(by);
@@ -96,25 +131,27 @@ function addBookToLibrary() {
     bookDiv.append(pages);
 
     // Checking if input is checked or not
-    if (myLibrary[i].read === "on") {
+    if (myLibrary[i].read) {
       const read = document.createElement("h4");
       read.textContent = "Read";
+      read.style.margin = ".5rem";
       bookDiv.append(read);
     } else {
       const read = document.createElement("h4");
       read.textContent = "Not Read";
+      read.style.margin = ".5rem";
       bookDiv.append(read);
     }
+
+    // Adds buttons to bookDiv
+    bookDiv.append(buttonDiv);
+
+    //Add bookDivs to bookShelf
     bookShelf.append(bookDiv);
   }
-
-  // Clears inputs
-  getTitle.value = "";
-  getAuthor.value = "";
-  getPages.value = "";
-  getRead.checked = false;
 }
 
 // Add scroll bar for bookShelf
 // Add removal of books
 // Add read book button
+// give each book div a id of the index

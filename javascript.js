@@ -71,8 +71,13 @@ function removeBookToLibrary(button) {
 
 // Function to change read status of array element
 function changeRead(button) {
-  myLibrary[button].read = false;
-  displayBooks();
+  if (myLibrary[button].read) {
+    myLibrary[button].read = false;
+    displayBooks();
+  } else {
+    myLibrary[button].read = true;
+    displayBooks();
+  }
 }
 
 // Functions to display all books in library
@@ -128,16 +133,22 @@ function displayBooks() {
     delButton.style.height = "2rem";
     delButton.style.width = "2rem";
     delButton.id = i;
+    delButton.className = "bookButton";
+    delButton.style.background = "none";
+    delButton.style.border = "none";
     delButton.onclick = function () {
       removeBookToLibrary(delButton.id);
     };
+    const delImage = document.createElement("img");
+    delImage.src = "/images/del11.png";
+    delButton.append(delImage);
     buttonDiv.append(delButton);
 
     // Creates button for changing if read or not
     const readButton = document.createElement("button");
     readButton.style.height = "2rem";
     readButton.style.width = "2rem";
-    readButton.style.marginLeft = ".5rem";
+    readButton.style.marginLeft = "2rem";
     readButton.id = i;
     readButton.className = "bookButton";
     readButton.style.background = "none";

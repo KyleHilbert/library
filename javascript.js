@@ -139,6 +139,7 @@ function displayBooks() {
     readButton.style.width = "2rem";
     readButton.style.marginLeft = ".5rem";
     readButton.id = i;
+    readButton.className = "bookButton";
     readButton.style.background = "none";
     readButton.style.border = "none";
     readButton.onclick = function () {

@@ -110,10 +110,13 @@ div.bookShelf {
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
-/*
-#1a374d
-#406882
-#6998ab
-#adcbd7
-#924bed
-*/
+/* CSS for Javascript stuff */
+
+/* Buttons in bookDiv */
+button.bookButton:hover {
+  transform: scale(1.1);
+}
+
+button.bookButton:active {
+  transform: scale(0.95);
+}
